@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     Button answerButton4;
     Button playAgainButton;
     ArrayList<Integer> answers;
-    int score = 0;
-    int scoreOutOf = 0;
+    int score;
+    int scoreOutOf;
     int answer;
     //TODO - change to allow game length to be changed
     int gameLength = 10;
@@ -80,12 +80,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void restartGame(View view) {
+        goButtonClicked(view);
+        scoreFinalTextView.setVisibility(View.INVISIBLE);
+        playAgainButton.setVisibility(View.INVISIBLE);
+    }
+
     public void goButtonClicked(View view) {
+
         view.setVisibility(View.INVISIBLE);
         timerTextView.setVisibility(View.VISIBLE);
         scoreTextView.setVisibility(View.VISIBLE);
         sumTextView.setVisibility(View.VISIBLE);
         gridLayout.setVisibility(View.VISIBLE);
+
+        score = 0;
+        scoreOutOf = 0;
 
         new CountDownTimer(gameLength*1000+100, 1000){
             public void onTick(long millisUntilFinished) {
