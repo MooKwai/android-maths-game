@@ -35,18 +35,20 @@
 
     <TextView
         android:id="@+id/sumTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:textAlignment="center"
         android:textSize="20sp"
+        android:textStyle="bold"
         android:visibility="invisible"
-        app:layout_constraintLeft_toRightOf="@+id/timerTextView"
-        app:layout_constraintRight_toLeftOf="@+id/scoreTextView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/scoreTextView"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/playAgainButton"
@@ -65,8 +67,8 @@
 
     <TextView
         android:id="@+id/scoreFinalTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="248dp"
+        android:layout_height="145dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -74,12 +76,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Final Score: "
+        android:textAlignment="center"
         android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/goButton"
+        tools:layout_editor_absoluteX="19dp" />
 
     <GridLayout
         android:id="@+id/gridLayout"
@@ -104,7 +108,7 @@
         app:layout_constraintVertical_bias="0.492">
 
         <Button
-            android:id="@+id/aButton"
+            android:id="@+id/answerButton1"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_column="0"
@@ -114,12 +118,13 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_row="0"
+            android:onClick="checkForAnswer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
         <Button
-            android:id="@+id/bButton"
+            android:id="@+id/answerButton2"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_column="1"
@@ -129,12 +134,13 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_row="0"
+            android:onClick="checkForAnswer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
         <Button
-            android:id="@+id/cButton"
+            android:id="@+id/answerButton3"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_column="0"
@@ -144,12 +150,13 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_row="1"
+            android:onClick="checkForAnswer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
         <Button
-            android:id="@+id/dButton"
+            android:id="@+id/answerButton4"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_column="1"
@@ -159,6 +166,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_row="1"
+            android:onClick="checkForAnswer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
@@ -173,14 +181,16 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
         android:onClick="goButtonClicked"
         android:text="GO!"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sumTextView" />
+        app:layout_constraintTop_toTopOf="@+id/gridLayout"
+
+        app:layout_constraintBottom_toBottomOf="@+id/gridLayout"
+        app:layout_constraintLeft_toLeftOf="@+id/gridLayout"
+        app:layout_constraintRight_toRightOf="@+id/gridLayout"
+
+        android:layout_marginTop="8dp" />
 
 
 </android.support.constraint.ConstraintLayout>
